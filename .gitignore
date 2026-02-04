@@ -4,3 +4,5 @@ node_modules/
 build/
 dist/
 *.log
+# local rebuild backup
+dist_old_*/
