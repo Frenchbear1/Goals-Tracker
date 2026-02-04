@@ -1,0 +1,46 @@
+{
+  "name": "goals-tracker",
+  "version": "1.0.0",
+  "description": "Goals and Waste time tracker desktop app",
+  "main": "dist/main.js",
+  "homepage": "./",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "concurrently": "^8.2.0",
+    "cross-env": "^10.1.0",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.0",
+    "wait-on": "^7.0.1"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "react-start": "cross-env BROWSER=none react-scripts start",
+    "react-build": "react-scripts build",
+    "electron-start": "wait-on http://localhost:3000 && electron .",
+    "electron-dev": "npm run tsc && concurrently \"npm run react-start\" \"wait-on http://localhost:3000 && cross-env REACT_APP_DEV=true electron . --remote-debugging-port=9222\"",
+    "electron-build": "npm run react-build && npm run tsc && electron-builder",
+    "build": "npm run react-build && npm run tsc && npm run electron-build",
+    "start": "npm run electron-dev"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
