@@ -98,3 +98,6 @@ The app will be packaged as both an installer (NSIS) and portable EXE in the `di
 ## License
 
 MIT
+
+![App Screenshot](Screenshot%202026-02-05%20193121.png)
+
